@@ -1,0 +1,12 @@
+<div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{$ctrl.id}}_field">{{::$ctrl.label | translate}}
+        <span class="required" ng-show="$ctrl.required">*</span>
+    </label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <div ng-show="!$ctrl.isRead()">
+            <textarea ui-tinymce="$ctrl.tinymceOptions" form-maxlength="{{$ctrl.maxlength}}" id="{{$ctrl.id}}_field" name="{{$ctrl.id}}" ng-model="$ctrl.val" class="form-control col-md-7 col-xs-12"></textarea>
+        </div>
+        <div ng-show="$ctrl.isRead()" ng-bind-html="$ctrl.val | unsafe"></div>
+        <span class="help-inline" ng-if="$root.error.hasError($ctrl.id)">{{$root.error.label($ctrl.id) | underscore | translate:$root.error.variables($ctrl.id)}}</span>
+    </div>
+</div>

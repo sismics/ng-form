@@ -1,0 +1,16 @@
+<div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{$ctrl.id}}_field">{{::$ctrl.label | translate}}
+        <span class="required" ng-show="$ctrl.required">*</span>
+    </label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <span class="input-group" ng-show="!$ctrl.isRead()">
+            <input type="text" placeholder="{{label | translate}}" id="{{$ctrl.id}}_field" name="{{$ctrl.id}}" ng-model="$ctrl.val"
+                   class="form-control col-md-7 col-xs-12" bs-datepicker />
+            <span class="input-group-btn hidden-print">
+                <button type="button" class="btn btn-default" ng-click="$ctrl.open($event)"><i class="fas fa-calendar"></i></button>
+            </span>
+        </span>
+        <div ng-show="$ctrl.isRead()" class="text-read">{{$ctrl.val | formatDate}}</div>
+        <span class="help-inline" ng-if="$root.error.hasError($ctrl.id)">{{$root.error.label($ctrl.id) | underscore | translate:$root.error.variables($ctrl.id)}}</span>
+    </div>
+</div>

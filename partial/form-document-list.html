@@ -1,0 +1,40 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th ng-show="!isRead()"></th>
+            <th translate="form_document_list_date"></th>
+            <th translate="form_document_list_filename"></th>
+            <th translate="form_document_list_length"></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody ui-sortable="sortableOptions" ng-model="val">
+        <tr ng-repeat="document in val">
+            <td class="handle" ng-show="!isRead()">
+                <i class="fas fa-bars"></i>
+            </td>
+            <td>{{document.createDate | formatDateTime}}</td>
+            <td>{{document.filename}}</td>
+            <td>{{document.length | formatFileSize}}</td>
+            <td class="options">
+                <a href="document/{{document.id}}" ng-hide="document.temporary" target="_blank" class="view"></a>
+                <a ng-show="!isRead()" ng-click="deleteDocument(document)" class="delete"></a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="row {{$root.error.getClass(id)}}">
+    <div class="col-xs-4 col-md-2">
+        <label for="{{id}}_field" ng-class="{required: required}" bs-tooltip="tooltip">{{::label | translate}}</label>
+    </div>
+    <div class="col-xs-8 col-md-5">
+        <input type="file" id="{{id}}_field" name="{{id}}" ng-model="val" ng-show="!isRead()" />
+        <span class="file-progress" id="${_prefix}_${field.id}_progress"></span>
+        <div class="progress" ng-if="percentComplete">
+            <div class="progress-bar" role="progressbar" aria-valuenow="{{percentComplete}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percentComplete}}%;">
+                <span class="percentComplete">{{percentComplete}}%</span>
+            </div>
+        </div>
+        <span class="help-inline" ng-if="$root.error.hasError(id)">{{$root.error.label(id) | underscore | translate:$root.error.variables(id)}}</span>
+    </div>
+</div>

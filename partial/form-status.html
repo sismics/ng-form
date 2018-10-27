@@ -1,0 +1,10 @@
+<div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12">{{::$ctrl.label | translate}}</label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <span class="form-status" ng-show="!$ctrl.val" title="{{'label_loading' | translate}}"></span>
+        <span class="form-status bg-red" ng-show="$ctrl.isError()" title="{{'label_error' | translate}}"></span>
+        <span class="form-status bg-green" ng-show="$ctrl.isSuccess()" title="{{'button_ok' | translate}}"></span>
+        <span class="text-read form-status-label" ng-show="$ctrl.isError()">{{$ctrl.val.label('status') | translate}}</span>
+        <span class="text-read form-status-label" ng-show="$ctrl.isSuccess()" translate="button_ok"></span>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="modal" id="modal-{{id}}" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">{{title | translate}}</h4>
+            </div>
+            <div class="modal-body">
+                <p>{{label | translate}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" translate="button_cancel"></button>
+                <button type="button" class="btn btn-danger" ng-click="onConfirm()" translate="button_ok"></button>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,11 @@
+<div class="form-group {{$root.error.getClass($ctrl.id)}}">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{$ctrl.id}}_field">{{::$ctrl.label | translate}}
+        <span class="required" ng-show="$ctrl.required">*</span>
+    </label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <label ng-repeat="option in $ctrl.options" class="form-checkbox">
+            <input type="checkbox" id="{{$ctrl.id}}_field" name="{{$ctrl.id}}" ng-model="option.val" ng-checked="$ctrl.isChecked(option)" ng-click="$ctrl.toggle(option)" ng-disabled="$ctrl.isRead()">{{option[$ctrl.labelKey]}}
+        </label>
+        <span class="help-inline" ng-if="$root.error.hasError($ctrl.id)">{{$root.error.label($ctrl.id) | underscore | translate:$root.error.variables($ctrl.id)}}</span>
+    </div>
+</div>

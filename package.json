@@ -1,0 +1,23 @@
+{
+  "name": "@sismics/ng-form",
+  "version": "1.0.0",
+  "description": "Form module for AngularJS",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sismics/ng-form.git"
+  },
+  "keywords": [
+    "angularjs",
+    "form"
+  ],
+  "author": "Jean-Marc Tremeaux <jm.tremeaux@sismics.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/sismics/ng-form/issues"
+  },
+  "homepage": "https://github.com/sismics/ng-form/",
+  "dependencies": {
+  }
+}

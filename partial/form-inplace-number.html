@@ -1,0 +1,4 @@
+<span>
+    <span class="inplace-readonly" ng-bind="value" ng-click="edit($event)" ng-show="!isEditing" style="width: 100%; height: 100%; display: inline-block"></span>
+    <input type="text" form-number-check param="param" min-value="{{minValue}}" max-value="{{maxValue}}" ng-model="value" ng-show="isEditing" ng-click="focusEdit($event)" style="width: 60px" ng-blur="cancelEdit($event)" ng-keyup="keyUp($event)" />
+</span>

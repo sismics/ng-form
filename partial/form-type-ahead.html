@@ -1,0 +1,22 @@
+<div class="form-group">
+    <label class="control-label {{$ctrl.classes.labelClass}}" for="{{$ctrl.id}}_field">{{::$ctrl.label | translate}}
+        <span class="required" ng-show="$ctrl.required">*</span>
+    </label>
+    <div class="{{$ctrl.classes.inputClass}}">
+        <div ng-class="{'input-group': $ctrl.val}">
+            <ui-select ng-model="$ctrl.val" ng-disabled="$ctrl.isRead()">
+                <ui-select-choices repeat="item in $ctrl.items | filter: $select.search track by item.id"
+                    refresh="$ctrl.refreshItems($select.search)" refresh-delay="200">
+                    <div ng-bind-html="item[$ctrl.labelKey] | highlight: $select.search"></div>
+                </ui-select-choices>
+                <ui-select-match placeholder="{{$ctrl.placeholder()}}">{{$select.selected[$ctrl.labelKey]}}</ui-select-match>
+            </ui-select>
+            <span class="input-group-btn" ng-show="$ctrl.val && !$ctrl.isRead()">
+              <button type="button" ng-click="$ctrl.val = null" class="btn btn-default">
+                <span class="fas fa-times"></span>
+              </button>
+            </span>
+        </div>
+        <span class="help-inline" ng-if="$root.error.hasError($ctrl.id)">{{$root.error.label($ctrl.id) | underscore | translate:$root.error.variables($ctrl.id)}}</span>
+    </div>
+</div>

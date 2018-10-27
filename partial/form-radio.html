@@ -1,0 +1,13 @@
+<div class="form-group {{$root.error.getClass($ctrl.id)}}">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{$ctrl.id}}">{{::$ctrl.label | translate}}
+        <span class="required" ng-show="$ctrl.required">*</span>
+    </label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="radio" ng-repeat="option in $ctrl.options">
+            <label>
+                <input type="radio" name="{{$ctrl.id}}" ng-model="$ctrl.val" ng-value="option" ng-disabled="$ctrl.isRead()">{{option.label}}</input>
+            </label>
+        </div>
+        <span class="help-inline" ng-if="$root.error.hasError($ctrl.id)">{{$root.error.label($ctrl.id) | underscore | translate:$root.error.variables($ctrl.id)}}</span>
+    </div>
+</div>

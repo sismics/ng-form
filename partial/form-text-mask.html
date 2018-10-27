@@ -1,0 +1,9 @@
+<div class="row {{$root.error.getClass(id)}}">
+    <div class="col-xs-4 col-md-2">
+        <label for="{{id}}_field" ng-class="{required: required}" bs-tooltip="tooltip">{{::label | translate}}</label>
+    </div>
+    <div class="col-xs-8 col-md-5">
+        <input type="text" ui-mask="{{mask}}" ui-mask-options="{{maskOptions}}" id="{{id}}_field" name="{{id}}" ng-model="val" ng-readonly="isRead()" />
+        <span class="help-inline" ng-if="$root.error.hasError(id)">{{$root.error.label(id) | underscore | translate:$root.error.variables(id)}}</span>
+    </div>
+</div>

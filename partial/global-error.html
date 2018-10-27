@@ -1,0 +1,5 @@
+<div class="form-group" ng-if="$root.error.hasError('global')">
+    <div class="col-md-12 error">
+        <span class="help-inline">{{$root.error.label('global') | underscore | translate}}</span>
+    </div>
+</div>

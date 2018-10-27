@@ -1,0 +1,14 @@
+<div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{$ctrl.id}}_field">{{::$ctrl.label | translate}}
+        <span class="required" ng-show="$ctrl.required">*</span>
+    </label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <ui-select multiple tagging tagging-label="" ng-model="$ctrl.val" ng-disabled="$ctrl.isRead()">
+            <ui-select-choices repeat="item in $ctrl.items | filter: $select.search">
+                <div ng-bind-html="item | highlight: $select.search"></div>
+            </ui-select-choices>
+            <ui-select-match placeholder="{{$ctrl.placeholder()}}">{{$item}}</ui-select-match>
+        </ui-select>
+        <span class="help-inline" ng-if="$root.error.hasError($ctrl.id)">{{$root.error.label($ctrl.id) | underscore | translate:$root.error.variables($ctrl.id)}}</span>
+    </div>
+</div>

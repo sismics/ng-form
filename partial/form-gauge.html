@@ -1,0 +1,9 @@
+<div class="col-md-2 col-sm-4 col-xs-6 dashboard_widget">
+    <h4>{{::$ctrl.label | translate}}</h4>
+    <div class="gauge-value">{{$ctrl.valueFormatted}}</div>
+    <canvas gaugejs width="120" height="80" style="width: 160px; height: 100px;" gauge-type="$ctrl.gaugeType" options="$ctrl.gaugeOptions"
+            value="$ctrl.value" max-value="$ctrl.maxValue" animation-time="$ctrl.animationTime"></canvas>
+    <div class="goal-wrapper">
+        <span id="goal-text" class="goal-value pull-right">{{$ctrl.maxValueFormatted}}</span>
+    </div>
+</div>

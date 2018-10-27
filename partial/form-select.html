@@ -1,0 +1,18 @@
+<div class="form-group">
+    <label class="control-label {{$ctrl.classes.labelClass}}" for="{{$ctrl.id}}_field">{{::$ctrl.label | translate}}
+        <span class="required" ng-show="$ctrl.required">*</span>
+    </label>
+    <div class="{{$ctrl.classes.inputClass}}">
+        <span class="{{$ctrl.val.id != null && $ctrl.isDetail() ? 'input-group' : ''}}">
+            <select placeholder="{{label | translate}}" id="{{$ctrl.id}}_field" name="{{$ctrl.id}}" ng-model="$ctrl.val" ng-show="!$ctrl.isRead()"
+                    ng-options="option[$ctrl.labelKey] group by option.group for option in $ctrl.options track by option.id" class="form-control">
+                <option value=""></option>
+            </select>
+            <span class="input-group-btn hidden-print" ng-show="$ctrl.val.id != null && $ctrl.isDetail()">
+                <a class="btn btn-default" ng-href="{{detailHref()}}"><i class="fas fa-search"></i></a>
+            </span>
+        </span>
+        <div ng-show="$ctrl.isRead()" ng-bind="$root._.find($ctrl.options, {id: $ctrl.val.id})[$ctrl.labelKey]" class="text-read"></div>
+        <span class="help-inline" ng-if="$root.error.hasError($ctrl.id)">{{$root.error.label($ctrl.id) | underscore | translate:$root.error.variables($ctrl.id)}}</span>
+    </div>
+</div>
