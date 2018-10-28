@@ -1,0 +1,22 @@
+<div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{$ctrl.id}}_field">{{::$ctrl.label | translate}}
+        <span class="required" ng-show="$ctrl.required == 'true'">*</span>
+    </label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <div ng-if="!$ctrl.isRead()" id="{{$ctrl.id}}">
+            <div ngf-drop ngf-select ng-model="$ctrl.filesToUpload" ng-change="$ctrl.startUpload()" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true" ng-disabled="$ctrl.inputDisabled">
+                {{'document_dropbox_description' | translate}}
+            </div>
+            <div ng-if="$ctrl.val">{{'document_dropbox_files' | translate}}
+                <ul>
+                    <li ng-repeat="document in $ctrl.val">{{document.filename}} ({{document.length | formatFileSize}})</li>
+                </ul>
+            </div>
+            <span class="file-progress" id="{{$ctrl.id}}_progress">{{$ctrl.progressLabel}}</span>
+            <div class="progress progress_sm" ng-show="$ctrl.showProgress">
+                <div class="progress-bar bg-green" role="progressbar" aria-valuenow="{{$ctrl.percentComplete}}" aria-valuemin="0" aria-valuemax="100" ng-style="$ctrl.progressBarStyle"></div>
+            </div>
+        </div>
+        <span class="help-inline" ng-if="$root.error.hasError($ctrl.id)">{{$root.error.label($ctrl.id) | underscore | translate:$root.error.variables($ctrl.id)}}</span>
+    </div>
+</div>
