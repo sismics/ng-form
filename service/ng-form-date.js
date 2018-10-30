@@ -69,6 +69,25 @@ angular
             },
 
             /**
+             * Format a Date object into an age.
+             *
+             * @param date Date to format
+             * @returns The age
+             */
+            formatAge: function(date) {
+                if (date == null) {
+                    return '';
+                }
+                if (typeof date == 'string') {
+
+                }
+                date = new Date(date);
+                var ageDifMs = Date.now() - date.getTime();
+                var ageDate = new Date(ageDifMs);
+                return Math.abs(ageDate.getUTCFullYear() - 1970);
+            },
+
+            /**
              * Format a Date object to the local date/time format.
              *
              * @param date Date to format
