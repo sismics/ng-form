@@ -2,7 +2,7 @@
 
 angular
     .module('ngForm')
-    .directive('formDocument', function ($filter, $translate) {
+    .directive('formDocumentList', function ($filter, $translate) {
         return {
             restrict: 'E',
             scope: {
