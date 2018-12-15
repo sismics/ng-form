@@ -11,6 +11,7 @@ angular
             state: '@',
             styles: '@',
             labelKey: '@',
+            choiceTemplate: '@',
             val: '=',
             error: '=',
             refresh: '='
@@ -37,6 +38,9 @@ angular
             };
             this.isRead = function() {
                 return this.state && this.state == 'read' || this.form.state == 'read';
+            };
+            this.getChoiceTemplate = function() {
+                return this.choiceTemplate || 'form-type-ahead/choiceTemplate.html';
             };
             this.items = [];
             this.refreshItems = function(term) {

@@ -7,7 +7,7 @@
             <ui-select ng-model="$ctrl.val" ng-disabled="$ctrl.isRead()">
                 <ui-select-choices repeat="item in $ctrl.items | filter: $select.search track by item.id"
                     refresh="$ctrl.refreshItems($select.search)" refresh-delay="200">
-                    <div ng-bind-html="item[$ctrl.labelKey] | highlight: $select.search"></div>
+                    <div ng-include="$ctrl.getChoiceTemplate()"></div>
                 </ui-select-choices>
                 <ui-select-match placeholder="{{$ctrl.placeholder()}}">{{$select.selected[$ctrl.labelKey]}}</ui-select-match>
             </ui-select>
@@ -20,3 +20,7 @@
         <span class="help-inline" ng-if="$root.error.hasError($ctrl.id)">{{$root.error.label($ctrl.id) | underscore | translate:$root.error.variables($ctrl.id)}}</span>
     </div>
 </div>
+
+<script type="text/ng-template" id="form-type-ahead/choiceTemplate.html">
+    <div ng-bind-html="item[$ctrl.labelKey] | highlight: $select.search"></div>
+</script>
