@@ -2,7 +2,7 @@
 
 angular
     .module('ngForm')
-    .directive('formDocumentList', function ($filter, $translate) {
+    .directive('formDocumentList', function ($filter, $translate, Env) {
         return {
             restrict: 'E',
             scope: {
@@ -65,7 +65,7 @@ angular
                     var formData = new FormData();
                     formData.append('file', $(this)[0].files[0]);
                     scope.currentUpload = $.ajax({
-                        url: 'document/upload',
+                        url: Env.apiUrl + 'document/upload',
                         type: 'POST',
                         data: formData,
                         processData: false,

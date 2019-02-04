@@ -42,7 +42,7 @@ angular
                         var formData = new FormData();
                         formData.append('file', $(this)[0].files[0]);
                         _this.currentUpload = $.ajax({
-                            url: Env.apiUrl + '/document/upload',
+                            url: Env.apiUrl + 'document/upload',
                             type: 'POST',
                             data: formData,
                             processData: false,
