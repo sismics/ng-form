@@ -25,7 +25,8 @@ angular
             this.tinymceOptions = {
                 skin : 'light',
                 resize: false,
-                plugins: 'textcolor link anchor table visualblocks',
+                autoresize_bottom_margin : 0,
+                plugins: 'textcolor link anchor table visualblocks autoresize',
                 menubar: false,
                 toolbar1: "undo redo | bold italic underline strikethrough | forecolor backcolor | visualblocks | alignleft aligncenter alignright alignjustify | formatselect",
                 toolbar2: "outdent indent blockquote | bullist numlist | link unlink anchor | undo redo | table | hr",
