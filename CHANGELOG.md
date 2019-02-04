@@ -1,4 +1,7 @@
 ## Change Log
+### Version 1.3.1 (2019-02-04)
+- Fix document upload URL
+- Fix textarea margin
 ### Version 1.3.0 (2018-12-15)
 - Allow custom templates in type-ahead
 ### Version 1.2.1 (2018-11-26)
