@@ -1,4 +1,6 @@
 ## Change Log
+### Version 1.4.0 (2019-02-05)
+- Add form-label component
 ### Version 1.3.1 (2019-02-04)
 - Fix document upload URL
 - Fix textarea margin
