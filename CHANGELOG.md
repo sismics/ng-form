@@ -1,4 +1,6 @@
 ## Change Log
+### Version 1.4.1 (2019-02-05)
+- Form document dropbox: drop documents one by one
 ### Version 1.4.0 (2019-02-05)
 - Add form-label component
 ### Version 1.3.1 (2019-02-04)
