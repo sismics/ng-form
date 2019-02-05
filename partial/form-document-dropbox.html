@@ -7,9 +7,9 @@
             <div ngf-drop ngf-select ng-model="$ctrl.filesToUpload" ng-change="$ctrl.startUpload()" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true" ng-disabled="$ctrl.inputDisabled">
                 {{'document_dropbox_description' | translate}}
             </div>
-            <div ng-if="$ctrl.val">{{'document_dropbox_files' | translate}}
+            <div ng-if="$ctrl.val.length > 0">{{'document_dropbox_files' | translate}}
                 <ul>
-                    <li ng-repeat="document in $ctrl.val">{{document.filename}} ({{document.length | formatFileSize}})</li>
+                    <li ng-repeat="document in $ctrl.val">{{document.filename}} ({{document.length | formatFileSize}}) <a class="fas fa-times" ng-click="$ctrl.deleteDocument($index)"></a></li>
                 </ul>
             </div>
             <span class="file-progress" id="{{$ctrl.id}}_progress">{{$ctrl.progressLabel}}</span>

@@ -16,12 +16,15 @@ angular
         },
         controller: function($filter, $translate, Env, $timeout, $scope) {
             var ctrl = this;
-            ctrl.startUpload = function() {
+            ctrl.clearDocument = function() {
                 ctrl.val = [];
+            };
+            ctrl.startUpload = function() {
                 ctrl.upload(ctrl.filesToUpload);
             };
             ctrl.$onInit = function() {
                 ctrl.showProgress = false;
+                ctrl.clearDocument();
             };
             ctrl.setPercentComplete = function (percentComplete) {
                 if (percentComplete == null) {
@@ -111,8 +114,8 @@ angular
                     });
                 });
             };
-            this.deleteDocument = function(document) {
-                this.val = {};
+            this.deleteDocument = function(index) {
+                this.val.splice(index, 1);
             };
         },
         templateUrl: 'vendor/@sismics/ng-form/partial/form-document-dropbox.html'
