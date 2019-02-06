@@ -10,13 +10,17 @@ angular
                     this.label = param.label;
                     this.onConfirm = param.onConfirm;
                 };
-                return $modal(
+                var modal = $modal(
                     angular.extend({
-                            templateUrl: 'vendor/@sismics/ng-form/partial/form-dialog-confirm.html',
-                            show: true,
-                            controllerAs: '$ctrl',
-                            controller: ctrl},
-                        param));
+                        templateUrl: 'vendor/@sismics/ng-form/partial/form-dialog-confirm.html',
+                        show: true,
+                        onShow: function() {
+                            modal.$element.find('.modal-confirm').focus();
+                        },
+                        controllerAs: '$ctrl',
+                        controller: ctrl
+                    }, param));
+                return modal;
             },
             wait: function(param) {
                 var ctrl = function() {
@@ -30,7 +34,8 @@ angular
                         keyboard: false,
                         backdrop: 'static',
                         controllerAs: '$ctrl',
-                        controller: ctrl},
+                        controller: ctrl
+                    },
                     param));
                 return $rootScope.waitModal;
             }
