@@ -1,4 +1,6 @@
 ## Change Log
+### Version 1.5.0 (2019-02-06)
+- Modal: focus on confirm button
 ### Version 1.4.1 (2019-02-05)
 - Form document dropbox: drop documents one by one
 ### Version 1.4.0 (2019-02-05)
