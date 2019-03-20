@@ -1,4 +1,6 @@
 ## Change Log
+### Version 1.5.1 (2019-03-20)
+- Modal: Add label of item to delete + icon
 ### Version 1.5.0 (2019-02-06)
 - Modal: focus on confirm button
 ### Version 1.4.1 (2019-02-05)
