@@ -5,8 +5,10 @@
                 <button type="button" class="close" ng-click="$hide()" aria-hidden="true">&times;</button>
                 <h4 class="modal-title">{{$ctrl.title | translate}}</h4>
             </div>
-            <div class="modal-body">
+            <div class="modal-body cf">
+                <span class="la la-question-circle la-5x modal-picture"></span>
                 <p>{{$ctrl.label | translate}}</p>
+                <p class="modal-item">{{$ctrl.item}}</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary modal-cancel" ng-click="$hide()" translate="button_cancel"></button>

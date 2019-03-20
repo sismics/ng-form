@@ -9,6 +9,7 @@ angular
                     this.title = param.title;
                     this.label = param.label;
                     this.onConfirm = param.onConfirm;
+                    this.item = param.item;
                 };
                 var modal = $modal(
                     angular.extend({
