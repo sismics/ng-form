@@ -12,8 +12,8 @@
             </div>
         </div>
         <div ng-if="$ctrl.isRead()">
-            <img ng-if="$ctrl.showInline" ng-src="{{$root.env.apiUrl + 'document/' + $ctrl.val.id}}" />
-            <a ng-if="!$ctrl.showInline" href="{{$root.env.apiUrl + 'document/' + $ctrl.val.id}}" target="_blank" class="fas fa-lg fa-fw fa-eye"></a>
+            <img ng-if="$ctrl.showInline" ng-src="{{$root.env.apiUrl + '/document/' + $ctrl.val.id}}" />
+            <a ng-if="!$ctrl.showInline" href="{{$root.env.apiUrl + '/document/' + $ctrl.val.id}}" target="_blank" class="fas fa-lg fa-fw fa-eye"></a>
         </div>
         <span class="help-inline" ng-if="$root.error.hasError($ctrl.id)">{{$root.error.label($ctrl.id) | underscore | translate:$root.error.variables($ctrl.id)}}</span>
     </div>
