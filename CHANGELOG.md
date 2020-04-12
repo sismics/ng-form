@@ -1,4 +1,6 @@
 ## Change Log
+### Version 1.5.1 (2020-04-12)
+- Add panel component
 ### Version 1.5.1 (2019-03-20)
 - Modal: Add label of item to delete + icon
 ### Version 1.5.0 (2019-02-06)
