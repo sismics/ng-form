@@ -1,6 +1,6 @@
-# ng-form
+## About
 
-This package provides an form system for AngularJS.
+The **ng-form** provides a form system for AngularJS.
 
 # License
 

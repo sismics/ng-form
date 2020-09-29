@@ -1,4 +1,8 @@
 ## Change Log
+### Version 1.6.1 (2020-09-29)
+- Add CD
+### Version 1.6.0 (2020-04-28)
+- Gauge: clip max value
 ### Version 1.5.1 (2020-04-12)
 - Add panel component
 ### Version 1.5.1 (2019-03-20)
